@@ -1,0 +1,6 @@
+*.ttl
+!geofla.ttl
+*.pyc
+*.zip
+*.7z.*
+*.7z
