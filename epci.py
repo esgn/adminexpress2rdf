@@ -9,14 +9,16 @@ import sys
 import utils
 
 def get_statut_uri(type_epci):
-    if type_epci=="CC":
+    if type_epci=="Communauté de communes":
         return ign_epci_cc
-    elif type_epci=="CU":
+    elif type_epci=="Communauté urbaine":
         return ign_epci_cu
-    elif type_epci=="CA":
+    elif type_epci=="Communauté d'agglomération":
         return ign_epci_cu
-    elif type_epci=="METRO" or type_epci=="MET69":
+    elif type_epci=="Métropole":
         return ign_epci_metro
+    elif type_epci=="Etablissement public territorial":
+	return ign_epci_ept
 
 def write_attributes(feature,ttlfile):
 
@@ -24,6 +26,8 @@ def write_attributes(feature,ttlfile):
     nom_epci = feature.GetField("NOM_EPCI")
     type_epci = feature.GetField("TYPE_EPCI")
     ign_uri = ign_epci_data_uri.replace("$",str(code_epci))
+    if get_statut_uri(type_epci) is None:
+	print code_epci +" "+ nom_epci +" "+ type_epci
 
     output = ign_uri + ' a ' + ign_epci_data_type + ' ;\n'
     output += '\t' + 'owl:sameAs ' + insee_epci_data_uri.replace("$",str(code_epci)) + ' ;\n'

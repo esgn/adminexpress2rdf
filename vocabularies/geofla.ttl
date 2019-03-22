@@ -339,6 +339,11 @@ statut:CommunauteDAgglomerations a geofla:TypeEpci, skos:Concept;
 	skos:inScheme statut:liste;
 	skos:prefLabel "communauté d’agglomération"@fr , "conurbation community"@en.
 
+statut:EtablissementPublicTerritorial a geofla:TypeEpci, skos:Concept;
+	skos:definition "Etablissement public territorial."@fr;
+	skos:inScheme statut:liste;
+	skos:prefLabel "Etablissement public territorial"@fr , "Etablissement public territorial"@en.
+
 statut:Metropole a geofla:TypeEpci, skos:Concept;
 	skos:definition "Métropole et métropole de Lyon assimilée."@fr;
 	skos:inScheme statut:liste;

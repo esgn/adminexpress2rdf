@@ -32,9 +32,11 @@ ftp = FTP(host)
 ftp.login(user,password)
 ftp.dir('-t',dirlist.append) # '-t' supported by this FTP but not standard
 # Check filename
+i=0
 for item in list(dirlist):
     if "ADMIN-EXPRESS" not in item:
-        dirlist.pop(0)
+        del dirlist[i]
+    i+=1
 filename = dirlist[0].split(" ")[-1]
 size = int(dirlist[0].split(" ")[-5])
 # If file has already been downloaded
