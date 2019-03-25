@@ -52,6 +52,8 @@ def store_chef_lieu(feature):
     geom_string = str(geom.GetX())+'|'+str(geom.GetY())
     if statut_chef_lieu == "Commune simple":
         chefs_lieu_commune.update({insee_commune:geom_string})
+    elif statut_chef_lieu == "Arrondissement municipal":
+        chefs_lieu_commune.update({insee_commune:geom_string})
     elif statut_chef_lieu == "Sous-préfecture":
         chefs_lieu_arrdt.update({insee_commune:geom_string})
         chefs_lieu_commune.update({insee_commune:geom_string})
