@@ -34,7 +34,7 @@ ftp.dir('-t',dirlist.append) # '-t' supported by this FTP but not standard
 # Check filename
 i=0
 for item in list(dirlist):
-    if "ADMIN-EXPRESS" not in item:
+    if "ADMIN-EXPRESS_" not in item:
         del dirlist[i]
     i+=1
 filename = dirlist[0].split(" ")[-1]
